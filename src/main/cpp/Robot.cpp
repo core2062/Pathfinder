@@ -14,7 +14,7 @@ void Robot::RobotInit() {
     wpi::SmallString<64> deployDirectory;
     frc::filesystem::GetDeployDirectory(deployDirectory);
     wpi::sys::path::append(deployDirectory, "paths");
-    wpi::sys::path::append(deployDirectory, "examplePath1.json");
+    wpi::sys::path::append(deployDirectory, "examplePath1.wpilib.json");
     frc::Trajectory trajectory = frc::TrajectoryUtil::FromPathweaverJson(deployDirectory);
 }
 
@@ -49,7 +49,9 @@ void Robot::AutonomousInit() {
   }
 }
 
-void Robot::AutonomousPeriodic() {}
+void Robot::AutonomousPeriodic() {
+
+}
 
 void Robot::TeleopInit() {
   // This makes sure that the autonomous stops running when
