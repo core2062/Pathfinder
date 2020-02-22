@@ -9,6 +9,7 @@
 
 #include <frc/TimedRobot.h>
 #include <frc2/command/Command.h>
+#include "Trajectory.h"
 
 #include "RobotContainer.h"
 
