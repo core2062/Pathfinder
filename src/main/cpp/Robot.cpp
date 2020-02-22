@@ -11,7 +11,11 @@
 #include <frc2/command/CommandScheduler.h>
 
 void Robot::RobotInit() {
-    
+    wpi::SmallString<64> deployDirectory;
+    frc::filesystem::GetDeployDirectory(deployDirectory);
+    wpi::sys::path::append(deployDirectory, "paths");
+    wpi::sys::path::append(deployDirectory, "examplePath1.json");
+    frc::Trajectory trajectory = frc::TrajectoryUtil::FromPathweaverJson(deployDirectory);
 }
 
 /**

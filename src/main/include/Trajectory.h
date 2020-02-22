@@ -15,6 +15,6 @@ using namespace wpi;
 class FollowPath : public Trajectory {
     FollowPath(const std::vector<State>& states);
     // Command getAutonomousCommand(string jsonFile);
-    void trajectoryInit();
-    void generateTrajectory(std::string trajectories[]);
+    // void trajectoryInit();
+    // void generateTrajectory(std::string trajectories[]);
 };

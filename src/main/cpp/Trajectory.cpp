@@ -5,15 +5,15 @@ FollowPath::FollowPath(const std::vector<State>& states) {
 
 }
 
-void FollowPath::trajectoryInit(std::string jsonFiles[]) {
-    wpi::SmallString<64> deployDirectory;
-    frc::filesystem::GetDeployDirectory(deployDirectory);
-    wpi::sys::path::append(deployDirectory, "paths");
-    wpi::sys::path::append(deployDirectory, "examplePath1.json");
-    frc::Trajectory trajectory = frc::TrajectoryUtil::FromPathweaverJson(deployDirectory);
-}
+// void FollowPath::trajectoryInit(std::string jsonFiles[]) {
+//     wpi::SmallString<64> deployDirectory;
+//     frc::filesystem::GetDeployDirectory(deployDirectory);
+//     wpi::sys::path::append(deployDirectory, "paths");
+//     wpi::sys::path::append(deployDirectory, "examplePath1.json");
+//     frc::Trajectory trajectory = frc::TrajectoryUtil::FromPathweaverJson(deployDirectory);
+// }
 
-void generateTrajectories(std::string trajectories[]) {
+// void generateTrajectories(std::string trajectories[]) {
     // for (int i = 0; i < sizeof(trajectories)/sizeof(trajectories[0]) - 1; i++) { // may need to be changed
     //     try {
     //         Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectories[i]);
@@ -22,7 +22,7 @@ void generateTrajectories(std::string trajectories[]) {
     //         DriverStation::ReportError("Unable to open trajectory: " + trajectories[i], ex.getStackTrace());
     //     }
     // }
-}
+// }
 // Command FollowPath::getAutonomousCommand(string jsonFile) {
 //     var autoVoltageConstraint = new DifferentialDriveVoltageConstraint(
 //                 new SimpleMotorFeedforward(DriveConstants.ks, DriveConstants.kv, DriveConstants.ka), drive.getDifferentialDriveKinematics(), 10);
