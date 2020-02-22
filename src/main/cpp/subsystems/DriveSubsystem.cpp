@@ -29,9 +29,11 @@ DriveSubsystem::DriveSubsystem()
 
 void DriveSubsystem::Periodic() {
   // Implementation of subsystem periodic method goes here.
+  SmartDashboard::PutNumber("Left Encoder Value", -m_leftEncoder.GetDistance()) ;
+  SmartDashboard::PutNumber("Right Encoder Value", -m_rightEncoder.GetDistance());
   m_odometry.Update(frc::Rotation2d(units::degree_t(GetHeading())),
-                    units::meter_t(m_leftEncoder.GetDistance()),
-                    units::meter_t(m_rightEncoder.GetDistance()));
+                    units::meter_t(-m_leftEncoder.GetDistance()),
+                    units::meter_t(-m_rightEncoder.GetDistance()));
 }
 
 void DriveSubsystem::ArcadeDrive(double fwd, double rot) {
@@ -64,6 +66,7 @@ void DriveSubsystem::SetMaxOutput(double maxOutput) {
 double DriveSubsystem::GetStartHeading() {
   try {
     m_gyro = new AHRS(SPI::Port::kMXP);
+    SmartDashboard::PutNumber("Gyro value", std::remainder(m_gyro->GetAngle(), 360));
     return std::remainder(m_gyro->GetAngle(), 360) * (kGyroReversed ? -1.0 : 1.0);
   } catch (std::exception ex) {
     std::cout << "Error in Get Start Heading" << std::endl;
