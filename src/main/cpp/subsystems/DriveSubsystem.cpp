@@ -29,7 +29,7 @@ DriveSubsystem::DriveSubsystem()
 
 void DriveSubsystem::Periodic() {
   // Implementation of subsystem periodic method goes here.
-  SmartDashboard::PutNumber("Left Encoder Value", -m_leftEncoder.GetDistance()) ;
+  SmartDashboard::PutNumber("Left Encoder Value", -m_leftEncoder.GetDistance());
   SmartDashboard::PutNumber("Right Encoder Value", -m_rightEncoder.GetDistance());
   m_odometry.Update(frc::Rotation2d(units::degree_t(GetHeading())),
                     units::meter_t(-m_leftEncoder.GetDistance()),
