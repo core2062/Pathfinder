@@ -22,6 +22,8 @@
 
 #include "Constants.h"
 
+using namespace frc;
+
 class DriveSubsystem : public frc2::SubsystemBase {
  public:
   DriveSubsystem();
